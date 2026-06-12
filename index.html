@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>煤球的小世界</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Noto Sans TC', 'PingFang TC', sans-serif;
+    background: #fdf6f0;
+    color: #3a2e2a;
+    min-height: 100vh;
+  }
+
+  .hero {
+    background: #3a2e2a;
+    color: #fdf6f0;
+    padding: 3rem 1.5rem 2.5rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 200px; height: 200px;
+    border-radius: 50%;
+    background: #c4956a22;
+  }
+
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -40px; left: -40px;
+    width: 140px; height: 140px;
+    border-radius: 50%;
+    background: #c4956a1a;
+  }
+
+  .hamster-icon {
+    font-size: 5rem;
+    display: block;
+    margin-bottom: 1rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero h1 {
+    font-size: 2.4rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    margin-bottom: 0.3rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .hero .subtitle {
+    font-size: 0.95rem;
+    color: #c4956a;
+    letter-spacing: 0.15em;
+    position: relative;
+    z-index: 1;
+  }
+
+  .id-card {
+    background: #fff;
+    margin: -1.5rem 1.2rem 0;
+    border-radius: 16px;
+    padding: 1.5rem 1.5rem;
+    box-shadow: 0 4px 20px rgba(58,46,42,0.10);
+    position: relative;
+    z-index: 2;
+  }
+
+  .id-card h2 {
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    color: #c4956a;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #f0e6dc;
+    padding-bottom: 0.6rem;
+  }
+
+  .id-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #f7f0ea;
+  }
+
+  .id-row:last-child { border-bottom: none; }
+
+  .id-label {
+    font-size: 0.82rem;
+    color: #9e8a7e;
+  }
+
+  .id-value {
+    font-size: 0.92rem;
+    font-weight: 500;
+    color: #3a2e2a;
+    text-align: right;
+    max-width: 60%;
+  }
+
+  .section {
+    padding: 2rem 1.2rem 0.5rem;
+  }
+
+  .section h2 {
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    color: #c4956a;
+    margin-bottom: 1rem;
+  }
+
+  .trait-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.8rem;
+  }
+
+  .trait {
+    background: #fff;
+    border-radius: 12px;
+    padding: 1rem 0.7rem;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(58,46,42,0.07);
+  }
+
+  .trait-icon { font-size: 1.8rem; display: block; margin-bottom: 0.4rem; }
+  .trait-name { font-size: 0.78rem; color: #9e8a7e; }
+
+  .memory-section {
+    padding: 2rem 1.2rem;
+  }
+
+  .memory-section h2 {
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    color: #c4956a;
+    margin-bottom: 1.2rem;
+  }
+
+  .memory-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 1.2rem 1.2rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 8px rgba(58,46,42,0.07);
+    border-left: 3px solid #c4956a;
+  }
+
+  .memory-card p {
+    font-size: 0.9rem;
+    line-height: 1.7;
+    color: #5a4a42;
+  }
+
+  .memory-placeholder {
+    background: #f7f0ea;
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-align: center;
+    color: #b8a49a;
+    font-size: 0.85rem;
+    line-height: 1.7;
+  }
+
+  footer {
+    text-align: center;
+    padding: 2rem 1.2rem;
+    font-size: 0.78rem;
+    color: #b8a49a;
+    line-height: 1.8;
+  }
+
+  .paw {
+    font-size: 1.2rem;
+    display: block;
+    margin-bottom: 0.4rem;
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <span class="hamster-icon">🐹</span>
+  <h1>煤球</h1>
+  <p class="subtitle">三線鼠 · 紫倉 · 2024</p>
+</div>
+
+<div class="id-card">
+  <h2>身份資料</h2>
+  <div class="id-row">
+    <span class="id-label">姓名</span>
+    <span class="id-value">煤球</span>
+  </div>
+  <div class="id-row">
+    <span class="id-label">品種</span>
+    <span class="id-value">三線鼠（紫倉）</span>
+  </div>
+  <div class="id-row">
+    <span class="id-label">出生年月</span>
+    <span class="id-value">2024 年 2 月</span>
+  </div>
+  <div class="id-row">
+    <span class="id-label">性別</span>
+    <span class="id-value">男生 ♂</span>
+  </div>
+</div>
+
+<div class="section">
+  <h2>煤球的日常</h2>
+  <div class="trait-grid">
+    <div class="trait">
+      <span class="trait-icon">🌰</span>
+      <span class="trait-name">愛吃東西</span>
+    </div>
+    <div class="trait">
+      <span class="trait-icon">🎡</span>
+      <span class="trait-name">跑滾輪達人</span>
+    </div>
+    <div class="trait">
+      <span class="trait-icon">😴</span>
+      <span class="trait-name">睡眠充足</span>
+    </div>
+  </div>
+</div>
+
+<div class="memory-section">
+  <h2>我們的回憶</h2>
+  <div class="memory-card">
+    <p>煤球是我的第一隻倉鼠，從 2024 年 2 月起，牠就是我生活裡最可愛的小夥伴。🐾</p>
+  </div>
+  <div class="memory-placeholder">
+    📷 更多照片與故事，即將陸續加入⋯
+  </div>
+</div>
+
+<footer>
+  <span class="paw">🐾</span>
+  這裡記錄著煤球與我的每一個小故事
+</footer>
+
+</body>
+</html>
